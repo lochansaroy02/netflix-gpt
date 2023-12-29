@@ -4,14 +4,13 @@ import { useState } from 'react';
 import { checkValidation } from '../utils/validation'
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from '../utils/firebase';
-import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
+import { AVATAR, BACKGROUND_IMAGE } from '../utils/constant';
 
 const Login = () => {
 
     const dispatch = useDispatch();
-    const navigate = useNavigate();
     const [Login, setLogin] = useState(true);
     const [error, setError] = useState(null);
     const email = useRef(null)
@@ -25,7 +24,7 @@ const Login = () => {
 
     const handleValidation = () => {
 
-        const errorMessage = checkValidation(email.current.value, password.current.value, name.current.value)
+        const errorMessage = checkValidation(email.current.value, password.current.value)
         setError(errorMessage)
 
         if (errorMessage) return;
@@ -39,7 +38,8 @@ const Login = () => {
                     const user = userCredential.user;
 
                     updateProfile(user, {
-                        displayName: name.current.value, photoURL: "https://avatars.githubusercontent.com/u/104918582?v=4",
+                        displayName: name.current.value, 
+                        photoURL: AVATAR
                     }).then(() => {
                         const { uid, email, displayName, photoURL } = auth.currentUser;
                         dispatch(addUser({
@@ -50,18 +50,13 @@ const Login = () => {
                         }))
 
                     }).catch((error) => {
-                        // An error occurred
-                        // ...
                     });
-                    navigate("/browse")
-
                     // ...
                 })
                 .catch((error) => {
                     const errorCode = error.code;
                     const errorMessage = error.message;
                     setError(errorCode + "-" + errorMessage)
-                    // ..
                 });
 
 
@@ -72,8 +67,7 @@ const Login = () => {
                 .then((userCredential) => {
                     // Signed in 
                     const user = userCredential.user;
-                    console.log(user)
-                    navigate("/browse")
+
                     // ...
                 })
                 .catch((error) => {
@@ -93,7 +87,7 @@ const Login = () => {
                 <Header />
             </div>
             <div className='bg-black relative'>
-                <img className='opacity-35 ' src="https://assets.nflxext.com/ffe/siteui/vlv3/c31c3123-3df7-4359-8b8c-475bd2d9925d/15feb590-3d73-45e9-9e4a-2eb334c83921/IN-en-20231225-popsignuptwoweeks-perspective_alpha_website_large.jpg" alt="" />
+                <img className='opacity-35 ' src={BACKGROUND_IMAGE} alt="" />
             </div>
             <form onSubmit={(e) => {
                 e.preventDefault()
