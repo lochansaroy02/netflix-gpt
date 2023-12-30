@@ -1,18 +1,20 @@
 import React from 'react'
+import useMovies from '../hooks/useMovies';
 import { useSelector } from 'react-redux';
 
 const Main = () => {
 
-    const movieData = useSelector((store) => store.movie.movies)
+    useMovies()
 
+    const movieData = useSelector((store) => store.movie.nowPlaying)
     if (!movieData) return;
 
-    const { original_title, overview } = movieData?.results[6]
+    const { original_title, overview } = movieData?.results[0]
 
     return (
         <div>
 
-            <div className='px-20 py-48'>
+            <div className='w-screen aspect-video py-40 px-10 text-white my-20  opacity-80 absolute bg-gradient-to-r from-black'>
                 <h1 className='font-bold text-4xl m-4'>{original_title}</h1>
                 <p className='m-4 w-1/3'>{overview}</p>
                 <div>
