@@ -9,6 +9,13 @@ export const OPTIONS = {
   method: 'GET',
   headers: {
     accept: 'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzOWU3ZjdhYjA0ZGE1Mjk0OGUzMGNmNjNiYTg4ZTRlYyIsInN1YiI6IjY0ZmQyZjRlNTFjMDFmMDBmZTEzNmIwOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.yCj66og6LAjhJGGIY1lQBDPCQNqdf1lkCcOqCPrpisY'
+    Authorization: 'Bearer'+ process.env.REACT_APP_AUTH_KEY
   }
 };
+
+
+export const LANG_CONFIG = [
+  {identifer: "en",name:"English"},
+  {identifer: "hin",name:"हिंदी"},
+  {identifer: "it",name:"Italiana"},
+]

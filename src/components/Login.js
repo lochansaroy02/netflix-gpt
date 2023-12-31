@@ -92,7 +92,7 @@ const Login = () => {
             <form onSubmit={(e) => {
                 e.preventDefault()
             }} className='px-4 py-11 absolute bg-black bg-opacity-70 rounded-2xl text-white flex flex-col h-[70vh] w-[50vh] m-auto top-0 bottom-0 left-0 right-0'>
-                <h1 className='mt-4 p-2 text-2xl'>{Login ? "Sign in " : "Sign Up"} </h1>
+                <h1 className='mt-4 p-2 text-2xl'>{Login ? "Sign in" : "Sign Up"} </h1>
                 {!Login && <input ref={name} className="m-2 p-4 h-10 bg-neutral-800 rounded-md" type="text" placeholder='Name' />}
                 <input ref={email} className="m-2 p-4 h-10 bg-neutral-800 rounded-md" type="text" placeholder='Email or phone number' />
                 <input ref={password} className="m-2 p-4 h-10 bg-neutral-800 rounded-md" type="password" placeholder='Password' />
