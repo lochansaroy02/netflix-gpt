@@ -77,11 +77,10 @@ const Header = () => {
             </div>
 
 
-           
                 <div className=' w-fit   flex gap-2 px-6 h-full items-center  '>
                     <button onClick={handleToggle} className='w-fit  ml-0   text-2xl z-10 mx-0  md:mx-5 bg-gray-700  p-1 md:p-4  md:textlg   rounded-lg text-white'> 
                     {
-                        !gpt ? <MdHome /> :  <  IoMdSearch />
+                        gpt ? <MdHome /> :  <  IoMdSearch />
                     } </button>
                     {user && <div className='flex  '>
                         <img className='h-12 w-12  hidden  md:inline-block rounded-md' src={user.photoURL} alt="" />

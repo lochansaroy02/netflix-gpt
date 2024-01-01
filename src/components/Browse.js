@@ -25,7 +25,7 @@ const Browse = () => {
     <div className='flex bg-black flex-col m-0 p-0'>
       <Header />
       {
-        !gptState ?  <GptPage/> :  <>
+        gptState ?  <GptPage/> :  <>
         <Main/> 
         <VideoBackground/>
         <MoviesSection/>

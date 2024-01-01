@@ -7,12 +7,12 @@ import useTrailer from '../hooks/useTrailer';
 
 const Main = () => {
     const movieData = useSelector((store) => store.movie.nowPlaying)
-    const { original_title, overview } = movieData?.results[0]
+    const { original_title, overview } = movieData.results[0]
 
 
 
 
-return ( original_title===undefined && overview===undefined )  ? <MainShimmer/> :       (
+return ( original_title ===undefined && overview===undefined )  ? <MainShimmer/> :       (
             <div>
                 {<div className='w-screen  aspect-video md:py-40 
                 bg-gradient-to-t from-black from-100%

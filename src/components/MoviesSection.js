@@ -13,9 +13,6 @@ const MoviesSection = () => {
         <div className=' md:top-[100%] top-[90%] absolute bg-black z-20'>
 
             <MovieRow movieArray={movieArray} />
-            <MovieRow movieArray={movieArray} />
-            <MovieRow movieArray={movieArray} />
-            <MovieRow movieArray={movieArray} />
         </div>
         
         )
