@@ -3,14 +3,19 @@ import useTrailer from "../hooks/useTrailer";
 const VideoBackground = () => {
 
     const movieData = useSelector((store) => store.movie.nowPlaying)
+    console.log(movieData)
 
     const trailerData = useSelector((store) => store.movie.trailerVideo)
     const Id = movieData?.results[0]?.id
     useTrailer(Id)
+    console.log(trailerData) //trailer data is undefined 
     return (
         trailerData &&
 
-      (  <div className="bg-black-500">
+      (  
+      
+      
+      <div className="bg-black-500">
             {<div className=" md:-my-5  bg-black   ">
                 <iframe
                     class="w-screen aspect-video mt-30"

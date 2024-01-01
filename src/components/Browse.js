@@ -23,10 +23,15 @@ const Browse = () => {
 
   return (
     <div className='flex bg-black flex-col m-0 p-0'>
+
+  
+
+
       <Header />
       {
         gptState ?  <GptPage/> :  <>
         <Main/> 
+        
         <VideoBackground/>
         <MoviesSection/>
         </>
