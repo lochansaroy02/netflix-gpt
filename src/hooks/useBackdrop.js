@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react'
+import  { useEffect } from 'react'
 import { OPTIONS } from '../utils/constant';
 import { useDispatch } from 'react-redux';
 import { addBackdrop } from '../utils/movieSlice';
@@ -20,7 +20,7 @@ const useBackdrop = (id) => {
             }
 
             const data = await response.json();
-            console.log(data)
+
             dispatch(addBackdrop(data))     
             return data;
         } catch (error) {
@@ -31,6 +31,7 @@ const useBackdrop = (id) => {
 
     useEffect(() => {
         getMovieData()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 }
 

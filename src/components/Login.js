@@ -82,7 +82,7 @@ const Login = () => {
 
     return (
         <>
-            <div>
+            <div className='bg-black'>
                 <Header />
             </div>
             <div className='bg-black relative'>

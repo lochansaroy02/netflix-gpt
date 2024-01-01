@@ -1,20 +1,16 @@
 import React from 'react';
-import useMovies from '../hooks/useMovies';
 import { useSelector } from 'react-redux';
-import { MdOutlineVaccines } from 'react-icons/md';
 import MainShimmer from './Shimmer/MainShimmer';
-import useTrailer from '../hooks/useTrailer';
+
 
 const Main = () => {
     const movieData = useSelector((store) => store.movie.nowPlaying);
 
-    // Check if movieData is null or undefined before accessing its properties
     if (!movieData || !movieData.results || movieData.results.length === 0) {
         return <MainShimmer />;
     }
 
     const { original_title, overview } = movieData.results[0];
-    console.log(original_title);
 
     return (
         <div className='w-screen aspect-video md:py-40 bg-gradient-to-t from-black from-100% px-10 text-white md:my-20 mt-64 md:opacity-80 absolute md:bg-gradient-to-r md:from-black'>

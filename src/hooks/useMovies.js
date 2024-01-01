@@ -12,7 +12,7 @@ const useMovies = () => {
     const getMovieData = async () => {
         const data = await fetch('https://api.themoviedb.org/3/movie/now_playing?page=1', OPTIONS);
         const json = await data?.json();
-        console.log(json)
+
         dispatch(addMovies(json))
 
     }
@@ -20,6 +20,7 @@ const useMovies = () => {
 
     useEffect(() => {
         !movieData &&  getMovieData()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
 }
