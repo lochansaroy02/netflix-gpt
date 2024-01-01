@@ -1,6 +1,6 @@
 import OpenAI from 'openai';
 
-const OPEN_API_KEY ="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"
+const OPEN_API_KEY ="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"
 const openai = new OpenAI({
     apiKey: OPEN_API_KEY,
     dangerouslyAllowBrowser: true

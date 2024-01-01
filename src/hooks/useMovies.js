@@ -14,7 +14,7 @@ const useMovies = () => {
         const json = await data?.json();
 
         dispatch(addMovies(json))
-        console.log(json)
+
     }
 
 

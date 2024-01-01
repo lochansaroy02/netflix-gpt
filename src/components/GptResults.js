@@ -14,14 +14,17 @@ const GptResults = () => {
 
 
     return (movieName &&
-        (<div className='flex flex-col items-center w-screen h-screen top-[30%]   p-10   fixed'>
+        (
+        
+        
+        <div className='flex  flex-col overflow-scroll  md:overflow-y-scroll items-center w-screen md:h-screen h-screen top-[30%] py-10  md:p-10   fixed'>
 
             
-            <div className='flex  items-center   flex-wrap w-fit h-fit'>
+            <div className='flex items-center  bg-neutral-900 rounded-xl   justify-center flex-wrap md:w-fit mt-5 h-fit'>
                 {movieName?.map((movie) =>
-                    <h1 className='px-3 py-1 bg-neutral-800 text-white rounded-md text-lg  my-4 mx-2 '>{movie}</h1>)}
+                    <h1 className='px-3   md:py-1 bg-neutral-800 text-white rounded-md text-lg my-2 md:my-4 mx-2 '>{movie}</h1>)}
             </div >
-            {<div className='text-white  gap-10 flex flex-wrap px-36 py-10   w-screen h-full mt-5 overflow-scroll'>
+            {<div className='text-white justify-center  gap-10 flex flex-wrap md:px-36 py-10   w-screen h-full md:mt-5 '>
                 {posterArr?.map((item) => {
                     if (item) {
                         return (

@@ -10,8 +10,7 @@ const MovieCard = ({ poster_url, id }) => {
    
     const navigate = useNavigate();
     const dispatch = useDispatch()
-    const movieData = useSelector((store)=> store.movie.movieId)
-    
+
     
 
 
@@ -28,7 +27,7 @@ const MovieCard = ({ poster_url, id }) => {
     return ( 
         <div className='w-36 md:w-48 rounded-md pr-4'>
             <img   onClick={openImage} className='cursor-pointer  rounded-md' src={IMG_CDN + poster_url} alt="error" />
-            <h1 className='text-white'>{id}</h1>
+            <h1 className='text-white'> </h1>
         </div>
     )
 }

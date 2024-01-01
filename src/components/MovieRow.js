@@ -3,13 +3,12 @@ import MovieCard from './MovieCard';
 
 const MovieRow = ({ movieArray }) => {
 
-    console.log(movieArray)
     return (movieArray && (
-        <div className='px-6 ' >
+        <div className='px-6 w-screen ' >
 
             <h1 className="text-lg md:text-3xl py-4 text-white"> Now playng</h1>
 
-            <div className="flex overflow-x-scroll no-scrollbar">
+            <div className=" flex  w-full scrollbar-thin scrollbar-thumb-neutral-800 scrollbar-track-neutral-600 md:overflow-x-scroll overflow-x-scroll scrollbar-rounded-[100%]">
 
                 <div className='flex '>
                     {movieArray.map((movie) => (

@@ -45,9 +45,9 @@ const GptSearch = () => {
 
 
   return (
-    <div className=' h-full'>
-      <div className=' w-fit  bg-black   '>
-        <img src={BACKGROUND_IMAGE} alt="" className='fixed top-0, left-0, mt-16 opacity-50 bg-black' />
+    <div className=' h-fit'>
+      <div className=' w-fit    '>
+        <img src={BACKGROUND_IMAGE} alt="" className='opacity-50 object-cover  h-screen md:absolute md:w-screen' />
       </div>
 
       <form className='flex flex-col justify-center items-center z-20   mt-20   fixed w-full top-20 '
