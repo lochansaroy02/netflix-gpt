@@ -1,8 +1,6 @@
-import React from 'react'
-
-
-import { useSelector } from 'react-redux';
+import React from 'react';
 import MovieRow from './MovieRow'
+import { useSelector } from 'react-redux';
 const MoviesSection = () => {
     const movies = useSelector((store) => store.movie.nowPlaying)
     const movieArray = movies?.results;

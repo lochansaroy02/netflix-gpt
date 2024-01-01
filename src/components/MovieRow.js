@@ -3,6 +3,7 @@ import MovieCard from './MovieCard';
 
 const MovieRow = ({ movieArray }) => {
 
+    console.log(movieArray)
     return (movieArray && (
         <div className='px-6 ' >
 
@@ -11,11 +12,9 @@ const MovieRow = ({ movieArray }) => {
             <div className="flex overflow-x-scroll no-scrollbar">
 
                 <div className='flex '>
-                    {movieArray.map((movie) =>
-                        <MovieCard poster_path={movie?.poster_path} />
-                    )
-                    }
-
+                    {movieArray.map((movie) => (
+                        <MovieCard key={movie.id} poster_url={movie.poster_path} id={movie.id}  />
+                    ))}
                 </div>
             </div>
 

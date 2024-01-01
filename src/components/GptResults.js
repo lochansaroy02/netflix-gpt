@@ -14,13 +14,15 @@ const GptResults = () => {
 
 
     return (movieName &&
-        (<div className='flex flex-col items-center w-screen h-screen top-1/2  absolute'>
-            <div className='flex items-center mx-10  flex-wrap w-fit h-fit'>
-                {movieName.map((movie) =>
+        (<div className='flex flex-col items-center w-screen h-screen top-[30%]   p-10   fixed'>
+
+            
+            <div className='flex  items-center   flex-wrap w-fit h-fit'>
+                {movieName?.map((movie) =>
                     <h1 className='px-3 py-1 bg-neutral-800 text-white rounded-md text-lg  my-4 mx-2 '>{movie}</h1>)}
-            </div>
-            <div className='text-white  gap-10 flex flex-wrap px-36 py-10   w-screen h-full mt-5'>
-                {posterArr.map((item) => {
+            </div >
+            {<div className='text-white  gap-10 flex flex-wrap px-36 py-10   w-screen h-full mt-5 overflow-scroll'>
+                {posterArr?.map((item) => {
                     if (item) {
                         return (
                             <div key={item}>
@@ -31,7 +33,7 @@ const GptResults = () => {
                         return null;
                     }
                 })}
-            </div>
+            </div> }
         </div>)
     )
 }

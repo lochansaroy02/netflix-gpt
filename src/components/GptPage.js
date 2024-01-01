@@ -12,8 +12,7 @@ const GptPage = () => {
 
     <div className='bg-black '>
       <GptSearch/>
-
-    {movieName && <GptResults/>}
+      {movieName && <GptResults/>}
     </div>
   )
 }

@@ -1,8 +1,10 @@
 import OpenAI from 'openai';
 
-const OPEN_API_KEY = process.env.REACT_APP_OPEN_API_KEY
+const OPEN_API_KEY ="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"
 const openai = new OpenAI({
     apiKey: OPEN_API_KEY,
+    dangerouslyAllowBrowser: true
+
 });
 
 const openAiResponse = async (gptQuary) => {

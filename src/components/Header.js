@@ -67,20 +67,18 @@ const Header = () => {
     
 
     return (
-        <div className=' flex justify-between   z-1000 absolute  bg-gradient-to-b from-black w-full  opacity-100    '>
+        <div className=' flex justify-between  fixed z-50   bg-black w-full  opacity-100    '>
             <img className='w-40 h-20 ' src={LOGO} alt="Logo" />
             <div className='flex items-center'>
 
                 <button onClick={handleToggle} className='text-white h-fit  px-4 py-2 rounded-lg  bg-gray-400'>{
                     !gpt ? "homepage" : "Search"
                 } </button>
-
               { !gpt &&  <select className='mx-4 px-4  rounded-md text-white bg-gray-500 py-2' onChange={handleLangChange}>
                     {
                         LANG_CONFIG.map((lang)=> <option value={lang.identifer} key="this">{lang.name}</option>
                         )
                     }
-                  
                 </select>}
 
                 {user && <div className=' mx-20 flex items-center  p-4'>
@@ -88,7 +86,6 @@ const Header = () => {
                     <button onClick={handleSignout} className=' z-10 mx-5 bg-gray-700 p-2 rounded-lg text-white '>  Sign out</button>
                 </div>}
             </div>
-
         </div>
     )
 }
