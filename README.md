@@ -26,8 +26,7 @@ You can see live website [Link](https://netflix-gpt-omega-weld.vercel.app/).
 ### Clone the repository:
 
 ```bash
-Copy code
-git clone https://github.com/your-username/netflix-gpt.git
+git clone https://github.com/lochansaroy02/netflix-gpt
 ```
 ### Navigate to the project directory:
 
@@ -48,7 +47,7 @@ npm start
 ```
 
 
-Acknowledgments 🙌
+## Acknowledgments 🙌
 Thanks to OpenAI for providing the powerful GPT-3.5 API.
 Shoutout to the creators of React, Firebase, Redux Toolkit, and Tailwind CSS for their amazing tools.
 Enjoy exploring movies with Netflix GPT! 🍿🎥
