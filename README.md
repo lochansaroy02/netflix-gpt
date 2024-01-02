@@ -2,7 +2,7 @@
 Welcome to Netflix GPT, a movie recommendation app powered by OpenAI's GPT-3.5! 🎉
 
 ## Live Demo
-You can see live website [Link](https://netflix-gpt-omega-weld.vercel.app/).
+You can see live website [Link](https://netflixgpt-vert.vercel.app).
 
 ## Features 🌟
 - **Movie Recommendations:** Get personalized movie recommendations by entering prompts.
