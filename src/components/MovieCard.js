@@ -8,10 +8,11 @@ import { addSelectedMovie } from '../utils/movieSlice'
 
 const MovieCard = ({ poster_url, id }) => {
    
-    const navigate = useNavigate();
+    const navigate = useNavigate(); 
     const dispatch = useDispatch()
 
-    
+    const IdArr = useSelector((store)=> store.movie.movieId)
+
 
 
     

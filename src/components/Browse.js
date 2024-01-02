@@ -14,31 +14,29 @@ import useMovies from '../hooks/useMovies'
 const Browse = () => {
 
 
-   useMovies();
+  useMovies();
   const gptState = useSelector((store) => store.gpt.gptState)
- 
 
-    console.log(process.env.REACT_APP)
 
 
   return (
     <div className='flex bg-black flex-col m-0 p-0'>
 
-  
+
 
 
       <Header />
       {
-        gptState ?  <GptPage/> :  <>
-        <Main/> 
-        
-        <VideoBackground/>
-        <MoviesSection/>
+        gptState ? <GptPage /> : <>
+          <Main />
+
+          <VideoBackground />
+          <MoviesSection />
         </>
       }
-      
-      
-      
+
+
+
     </div>
   )
 }
