@@ -31,19 +31,15 @@ git clone https://github.com/your-username/netflix-gpt.git
 ```
 ### Navigate to the project directory:
 
-``bash
-Copy code
+```bash
 cd netflix-gpt
 ```
-
-
 
 ### Install dependencies:
 
 ```bash
 npm install
 ```
-
 
 ### Run the app:
 
