@@ -18,7 +18,7 @@ const Browse = () => {
   const gptState = useSelector((store) => store.gpt.gptState)
  
 
-  
+    console.log(process.env.REACT_APP)
 
 
   return (

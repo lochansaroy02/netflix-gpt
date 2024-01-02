@@ -4,7 +4,7 @@ import MovieCard from './MovieCard';
 const MovieRow = ({ movieArray }) => {
 
     return (movieArray && (
-        <div className='px-6 w-screen ' >
+        <div className='px-6 w-screen py-2 ' >
 
             <h1 className="text-lg md:text-3xl py-4 text-white"> Now playng</h1>
 

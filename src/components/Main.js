@@ -9,7 +9,7 @@ const Main = () => {
     if (!movieData || !movieData.results || movieData.results.length === 0) {
         return <MainShimmer />;
     }
-
+    
     const { original_title, overview } = movieData.results[0];
 
     return (

@@ -7,7 +7,7 @@ const VideoBackground = () => {
     const trailerData = useSelector((store) => store.movie.trailerVideo)
     const Id = movieData?.results[0]?.id
     useTrailer(Id)
-    
+        console.log(process.env.REACT_APP_NAME)
     return (
         trailerData &&
 
