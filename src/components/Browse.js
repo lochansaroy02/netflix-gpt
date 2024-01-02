@@ -20,7 +20,7 @@ const Browse = () => {
 
 
   return (
-    <div className='flex bg-black flex-col m-0 p-0'>
+    <div className='flex  flex-col m-0 p-0'>
 
 
 
@@ -29,7 +29,6 @@ const Browse = () => {
       {
         gptState ? <GptPage /> : <>
           <Main />
-
           <VideoBackground />
           <MoviesSection />
         </>

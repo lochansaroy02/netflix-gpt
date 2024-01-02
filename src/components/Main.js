@@ -13,7 +13,7 @@ const Main = () => {
     const { original_title, overview } = movieData.results[0];
 
     return (
-        <div className='w-screen aspect-video md:py-40 bg-gradient-to-t from-black from-100% px-10 text-white md:my-20 mt-64 md:opacity-80 absolute md:bg-gradient-to-r md:from-black'>
+        <div className='w-screen bg-gradient-to-t from-black  py-10 md:top-0  top-52   rounded-b-xl h-fit md:aspect-video md:py-40 md:w-fit md:h-fit  px-10 text-white md:absolute  md:my-20  md:opacity-80 absolute md:bg-gradient-to-r '>
             <h1 className='font-bold text-4xl md:m-4'>{original_title}</h1>
             <p className='md:m-4 mb-6 md:w-1/3'>{overview}</p>
             <div>

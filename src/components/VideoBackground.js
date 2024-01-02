@@ -7,17 +7,16 @@ const VideoBackground = () => {
     const trailerData = useSelector((store) => store.movie.trailerVideo)
     const Id = movieData?.results[0]?.id
     useTrailer(Id)
-        console.log(process.env.REACT_APP_NAME)
     return (
         trailerData &&
 
         (
 
 
-            <div className="bg-black-500">
-                {<div className=" md:-my-5  bg-black   ">
+            <div className="">
+                {<div className="w-screen  my-0  bg-black   ">
                     <iframe
-                        class="w-screen aspect-video mt-30"
+                        class=" aspect-video w-screen "
                         src={`https://www.youtube.com/embed/${trailerData?.key}?autoplay=1&mute=1&loop=1`}
                         title="YouTube video player"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

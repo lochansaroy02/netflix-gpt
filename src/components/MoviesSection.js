@@ -8,17 +8,14 @@ const MoviesSection = () => {
     const movies = useSelector((store) => store.movie.nowPlaying)
     const topRated = useSelector((store) => store.movie.topRated);
     const movieArray = movies?.results;
-    console.log(movies?.results)
-    
-    console.log(topRated)
-    
+ 
 
 
     return (
         movies && topRated &&
         (
         
-        <div className=' md:top-[100%] top-[90%] absolute bg-black z-20'>
+        <div className=' md:top-[100%] top-[60%] absolute bg-black z-20'>
             <MovieRow movieArray={movieArray} />
             <MovieRow movieArray={topRated}  />
         </div>

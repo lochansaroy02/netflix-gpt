@@ -3,6 +3,7 @@ import { IMG_CDN } from '../utils/constant';
 import useBackdrop from '../hooks/useBackdrop';
 import useMovies from '../hooks/useMovies';
 import { addThisMovie } from '../utils/movieSlice';
+import Header from './Header';
 
 const MoviePage = () => {
     const dispatch = useDispatch()
@@ -22,7 +23,6 @@ const MoviePage = () => {
 
     const populerMovies = populer?.[0];
     const topRatedMovies = toprated?.[0];
-    console.log(selectedMovie)
     const { id, poster_path, vote_average,title, overview, release_date } = selectedMovie  ?? {};
 
 
@@ -45,29 +45,28 @@ const MoviePage = () => {
 
 
 
-    return ( selectedMovie &&  (
+    return ( selectedMovie  &&  movieData &&  (
 
         <>
+            <div className=''>
 
-            <div className='bg-black'>
-
-                <div className='flex flex-wrap bg-black '>
+                <div className='flex md:h-full  flex-wrap bg-black '>
                     {
                         <img className='md:w-screen  md:fixed fixed h-screen object-cover blur-sm ' src={IMG_CDN + backdropArr?.[0].file_path} alt="" />
                     }
-                    <div className="fixed   inset-0 bg-black opacity-75"></div>
+                    <div className="fixed   inset-0 bg-black opacity-70 md:opacity-70"></div>
                 </div>
 
 
-                <div className='md:my-10  md:p-5 w-screen h-fit     md:bg-gradient-to-r md:from-black  top-10  left-0 absolute' >
+                <div className='md:pt-20 pt-14   md:p-5 w-screen h-screen    md:bg-gradient-to-r md:from-black    left-0 absolute' >
                     <div className=' flex w-screen md:justify-start justify-center'>
-                        <img className='w-56 mx-20' src={IMG_CDN + poster_path} alt="" />
+                        <img className='md:w-56 w-48 mx-20' src={IMG_CDN + poster_path} alt="" />
                     </div>
-                    <div className='text-white  w-full  flex flex-col md:items-start items-center '>
-                        <h3 className='md:text-xl md:px-6 mt-5'> Ratings :  {parseFloat(vote_average.toFixed(2))}</h3>
-                        <h1 className='text-5xl my-2 md:px-6' >{title}</h1>
-                        <p className='md:text-lg md:w-1/2 md:px-1  w-fit mx-5 text-left text-md '>{overview}</p>
-                        <h3 className='md:px-6'>{release_date}</h3>
+                    <div className='text-white md:pl-10 md:mb-0   w-full  flex flex-col md:items-start items-center '>
+                        <h3 className='md:text-xl  md:px-6 mt-5'> Ratings :  {parseFloat(vote_average.toFixed(2))}</h3>
+                        <h1 className='md:text-5xl text-3xl my-2 px-5  md:px-6' >{title}</h1>
+                        <p className='md:text-lg md:w-1/2 md:px-1  w-fit mx-5 text-left text-sm md:text-md '>{overview}</p>
+                        <h3 className='md:px-6 mt-4'> Release Date: {release_date}</h3>
                     </div>
                 </div>
 

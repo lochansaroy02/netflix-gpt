@@ -10,7 +10,7 @@ const GptPage = () => {
   return (
 
 
-    <div className='bg-black '>
+    <div className=' w-full h-full bg-blue-300'>
       <GptSearch/>
       {movieName && <GptResults/>}
     </div>

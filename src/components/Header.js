@@ -70,7 +70,7 @@ const Header = () => {
 
 
     return (
-        <div className='flex  justify-between items-center  '>
+        <div className='flex bg-black  justify-between items-center md:h-fit '>
             <div className=' flex justify-center'>
                 <img className='w-40 h-20' src={LOGO} alt="Logo" />
 

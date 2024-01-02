@@ -5,6 +5,7 @@ import { BACKGROUND_IMAGE, OPTIONS } from '../utils/constant'
 import { MdSearch } from "react-icons/md";
 import openAiResponse from '../utils/openAi';
 import { pushMovieName, pushMoviesList, } from '../utils/gptSlice';
+import Header from './Header';
 
 const GptSearch = () => {
   const dispatch = useDispatch(null);
@@ -27,11 +28,11 @@ const GptSearch = () => {
     const gptQuary = "act as a movie recommendation system and suggest me some movie for the quary:" + searchText.current.value + ".only give  me 5 top results, comma saprated, here is the example: movie1,movie2,movie3,movie4...do not write here is the result and all dont add numbering and year "
     const result = await openAiResponse(gptQuary)
     const movieArray = result?.[0]?.message?.content?.split(",");
-    
+
     if (movieArray.length > 1) {
       dispatch(pushMovieName(movieArray))
     }
-    
+
     const promiseArray = movieArray?.map((movie) => getSearchedMovies(movie))
     const finalResult = await Promise?.all(promiseArray)
 
@@ -45,18 +46,15 @@ const GptSearch = () => {
 
 
   return (
-    <div className=' h-fit'>
-      <div className=' w-fit    '>
-        <img src={BACKGROUND_IMAGE} alt="" className='opacity-50 object-cover  h-screen md:absolute md:w-screen' />
-      </div>
 
-      <form className='flex flex-col justify-center items-center z-20   mt-20   fixed w-full top-20 '
+    <div className=' h-fit  '>
+      <form className='flex flex-col justify-center items-center z-20  mt-20   fixed w-full top-20 '
         onSubmit={(e) => {
           e.preventDefault()
         }}
       >
 
-        <input ref={searchText} className='m-2 p-4 h-10 text-white bg-neutral-800 rounded-md w-1/2' type="text" placeholder={lang[langKey].placeHolder} />
+        <input ref={searchText} className='m-2 p-4 h-10 text-white bg-zinc-700  rounded-md w-3/4 md:w-1/2' type="text" placeholder={lang[langKey].placeHolder} />
         <button onClick={handleGPTClick} className='bg-red-600  flex items-center gap-2  py-2 px-4 rounded-lg'> <MdSearch /> {lang[langKey].search}</button>
 
 
