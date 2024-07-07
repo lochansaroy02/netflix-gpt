@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import Header from './Header'
+import Header from './Navbar'
 import Main from './Main'
 import VideoBackground from './VideoBackground'
 import MoviesSection from './MoviesSection'
@@ -8,7 +8,7 @@ import GptPage from './GptPage'
 import { useSelector } from 'react-redux'
 import gptSlice from '../utils/gptSlice'
 import MainShimmer from './Shimmer/MainShimmer'
-import useMovies from '../hooks/useMovies'
+import useMovies from '../hooks/movies/useUpcomingMovies'
 
 
 const Browse = () => {
@@ -29,7 +29,7 @@ const Browse = () => {
       {
         gptState ? <GptPage /> : <>
           <Main />
-          <VideoBackground />
+          {/* <VideoBackground /> */}
           <MoviesSection />
         </>
       }

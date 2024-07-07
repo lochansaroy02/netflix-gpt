@@ -12,7 +12,7 @@ import { changeLanguage } from '../utils/configSlice';
 import { IoMdLogOut } from "react-icons/io";
 import { MdHome } from "react-icons/md";
 
-const Header = () => {
+const Navbar = () => {
     const user = useSelector((store) => store.user)
     const gpt = useSelector((store) => store.gpt.gptState)
 
@@ -110,4 +110,4 @@ const Header = () => {
     )
 }
 
-export default Header
+export default Navbar;

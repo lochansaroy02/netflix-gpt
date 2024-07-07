@@ -1,14 +1,15 @@
 import React from 'react';
 import MovieRow from './MovieRow'
 import { useSelector } from 'react-redux';
-import useTopRated from '../hooks/useTopRated';
+import useTopRated from '../hooks/movies/useTopRatedMovies';
+import useTopRatedMovies from '../hooks/movies/useTopRatedMovies';
+import useUpcomingMovies from '../hooks/movies/useUpcomingMovies';
 
 const MoviesSection = () => {
-    useTopRated()
     const movies = useSelector((store) => store.movie.nowPlaying)
     const topRated = useSelector((store) => store.movie.topRated);
     const movieArray = movies?.results;
- 
+    useUpcomingMovies();
 
 
     return (

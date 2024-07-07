@@ -4,7 +4,10 @@ import { createSlice } from "@reduxjs/toolkit";
 const movieSlice = createSlice({
     name: 'movie',
     initialState: {
+        topRatedMovies: null,
         nowPlaying: null,
+
+
         trailerVideo: null,
         movieId: null,
         backdrop: null,
@@ -12,9 +15,15 @@ const movieSlice = createSlice({
         clickedMovieData: null
     },
     reducers: {
-        addMovies: (state, action) => {
+
+        addTopRatedMovies: (state, action) => {
+            state.topRatedMovies = action.payload;
+        },
+        addNowPlayingMovies: (state, action) => {
             state.nowPlaying = action.payload;
         },
+
+        
         addTrailer: (state, action) => {
             state.trailerVideo = action.payload;
         },
@@ -34,5 +43,5 @@ const movieSlice = createSlice({
     }
 })
 
-export const { addMovies, addTrailer, addSelectedMovie, addBackdrop,addTopRated,addThisMovie } = movieSlice.actions;
+export const { addMovies, addTrailer, addNowPlayingMovies,addSelectedMovie, addTopRatedMovies,addBackdrop,addTopRated,addThisMovie } = movieSlice.actions;
 export default movieSlice.reducer;

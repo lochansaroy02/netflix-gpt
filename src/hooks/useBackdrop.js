@@ -1,38 +1,38 @@
 
-import  { useEffect } from 'react'
-import { OPTIONS } from '../utils/constant';
-import { useDispatch } from 'react-redux';
-import { addBackdrop } from '../utils/movieSlice';
+// import  { useEffect } from 'react'
+// import { OPTIONS } from '../utils/constant';
+// import { useDispatch } from 'react-redux';
+// import { addBackdrop } from '../utils/movieSlice';
 
-const useBackdrop = (id) => {
-
-
-    const dispatch = useDispatch();
+// const useBackdrop = (id) => {
 
 
-    const getMovieData = async () => {
+//     const dispatch = useDispatch();
 
-        try {
-            const response = await fetch('https://api.themoviedb.org/3/movie/' + id + '/images', OPTIONS);
+// //
+//     const getMovieData = async () => {
 
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
+//         try {
+//             const response = await fetch('https://api.themoviedb.org/3/movie/' + id + '/images', OPTIONS);
 
-            const data = await response.json();
+//             if (!response.ok) {
+//                 throw new Error(`HTTP error! Status: ${response.status}`);
+//             }
 
-            dispatch(addBackdrop(data))     
-            return data;
-        } catch (error) {
-            console.error("Error fetching movie data:", error);
-            throw error;
-        }
-    }
+//             const data = await response.json();
 
-    useEffect(() => {
-        getMovieData()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
-}
+//             dispatch(addBackdrop(data))     
+//             return data;
+//         } catch (error) {
+//             console.error("Error fetching movie data:", error);
+//             throw error;
+//         }
+//     }
 
-export default useBackdrop;
+//     useEffect(() => {
+//         getMovieData()
+//     // eslint-disable-next-line react-hooks/exhaustive-deps
+//     }, []);
+// }
+
+// export default useBackdrop;

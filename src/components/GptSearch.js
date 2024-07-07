@@ -1,11 +1,11 @@
 import React, { useRef } from 'react'
 import { lang } from '../utils/langConst'
 import { useDispatch, useSelector } from 'react-redux'
-import { BACKGROUND_IMAGE, OPTIONS } from '../utils/constant'
+import { BACKGROUND_IMAGE, OPTIONS } from '.././utils/constant'
 import { MdSearch } from "react-icons/md";
 import openAiResponse from '../utils/openAi';
 import { pushMovieName, pushMoviesList, } from '../utils/gptSlice';
-import Header from './Header';
+import Header from './Navbar';
 
 const GptSearch = () => {
   const dispatch = useDispatch(null);

@@ -5,7 +5,8 @@ const VideoBackground = () => {
     const movieData = useSelector((store) => store.movie.nowPlaying)
 
     const trailerData = useSelector((store) => store.movie.trailerVideo)
-    const Id = movieData?.results[0]?.id
+    const Id = movieData?.results[0]?.id;
+    console.log(movieData)
     useTrailer(Id)
     return (
         trailerData &&
