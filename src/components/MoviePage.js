@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { IMG_CDN } from '../utils/constant';
 import useBackdrop from '../hooks/useBackdrop';
-import useMovies from '../hooks/movies/useUpcomingMovies';
+import useMovies from '../hooks/movies/usePopulerMovies';
 import { addThisMovie } from '../utils/movieSlice';
 import Header from './Navbar';
 

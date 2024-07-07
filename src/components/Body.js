@@ -7,6 +7,9 @@ import MoviesSection from './MoviesSection';
 import Header from './Navbar';
 import useTopRatedMovies from '../hooks/movies/useTopRatedMovies';
 import TopRatedMovies from './movies/TopRatedMovies';
+import NowPlayingMovies from './movies/NowPlayingMovies';
+import PopulerMovies from './movies/PopulerMovies';
+import Movies from './movies/Movies';
 
 
 const Body = () => {
@@ -35,14 +38,14 @@ const Body = () => {
 
 
 
-        useTopRatedMovies()
+
 
 
 
     return (
             <div className='text-white'>
-            {/* <Browse/>  */}
-            <TopRatedMovies/>
+
+           <Movies/> 
             </div>
         // <RouterProvider router={AppRouter} />
     )

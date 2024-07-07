@@ -8,7 +8,7 @@ import GptPage from './GptPage'
 import { useSelector } from 'react-redux'
 import gptSlice from '../utils/gptSlice'
 import MainShimmer from './Shimmer/MainShimmer'
-import useMovies from '../hooks/movies/useUpcomingMovies'
+import useMovies from '../hooks/movies/usePopulerMovies'
 
 
 const Browse = () => {

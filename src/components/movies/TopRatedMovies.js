@@ -4,7 +4,7 @@ import MovieCard from '../MovieCard';
 import { useSelector } from 'react-redux';
 
 const TopRatedMovies = () => {
-        useTopRatedMovies()
+    useTopRatedMovies()
     const movieData  = useSelector((store) => store.movie.topRatedMovies);
     let populerShows =movieData?.results;
     useTopRatedMovies()
