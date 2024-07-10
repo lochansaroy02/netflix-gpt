@@ -7,7 +7,6 @@ import MoviesSection from './MoviesSection';
 import Header from './Navbar';
 import useTopRatedMovies from '../hooks/movies/useTopRatedMovies';
 import TopRatedMovies from './movies/TopRatedMovies';
-import NowPlayingMovies from './movies/NowPlayingMovies';
 import PopulerMovies from './movies/PopulerMovies';
 import Movies from './movies/Movies';
 import CardShimmer from './Shimmer/CardShimmer';
@@ -16,41 +15,21 @@ import useAllData from '../hooks/useAllData';
 import useMovieGenre from '../hooks/movies/useMovieGenre';
 import useTvGenre from '../hooks/tvSeries/useTvGenre';
 import useGenre from '../hooks/useGenre';
+import usePopulerMovies from '../hooks/movies/usePopulerMovies';
+import MovieCard from './MovieCard';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 
 const Body = () => {
-
-    // const AppRouter = createBrowserRouter([
-
-
-    //     {
-    //         path: '/',
-    //         element: <Login />
-    //     },
-    //     {
-    //         path: '/login',
-    //         element: <Login />
-    //     },
-    //     {
-    //         path: '/browse',
-    //         element: <Browse />
-    //     },
-    //     {
-    //         path: '/movie/:id',
-    //         element: <MoviePage/>
-    //     }
-    // ])
-
-
-    
-
-    
-
+    const thisMovie = useSelector((store)=> store.movie.clickedMovieData)
     return (
-            <div className='text-white'>
-                
-            </div>
-        // <RouterProvider router={AppRouter} />
+        <Router>
+        <Routes>
+          <Route path="/" element={<Browse />} />
+          <Route path="/:id" element={<MoviePage />} />
+        </Routes>
+      </Router>
     )
 }
 
