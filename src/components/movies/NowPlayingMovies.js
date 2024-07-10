@@ -13,7 +13,7 @@ const NowPlayingMovies = () => {
     <div className='flex  '>
         {movieData?.results?.map((movie) => (
             <div >
-                <MovieCard key={movie.id} poster_url={movie.poster_path} id={movie.id} />
+                <MovieCard key={movie.id} poster_url={movie.poster_path} id={movie.id} title={movie.title} />
             </div>
         ))}
     </div>

@@ -9,6 +9,9 @@ import { useSelector } from 'react-redux'
 import gptSlice from '../utils/gptSlice'
 import MainShimmer from './Shimmer/MainShimmer'
 import useMovies from '../hooks/movies/usePopulerMovies'
+import Movies from './movies/Movies'
+import TvShows from './tvShow/TvShows'
+import Login from './Login'
 
 
 const Browse = () => {
@@ -28,9 +31,8 @@ const Browse = () => {
       <Header />
       {
         gptState ? <GptPage /> : <>
-          <Main />
-          {/* <VideoBackground /> */}
-          <MoviesSection />
+          <Main/> 
+          <Movies/>
         </>
       }
 

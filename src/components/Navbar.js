@@ -7,8 +7,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addUser, removeUser } from '../utils/userSlice';
 import { LOGO } from '../utils/constant';
 import { toggleGPTState } from '../utils/gptSlice';
-import { LANG_CONFIG } from '../utils/constant';
-import { changeLanguage } from '../utils/configSlice';
 import { IoMdLogOut } from "react-icons/io";
 import { MdHome } from "react-icons/md";
 
@@ -88,24 +86,6 @@ const Navbar = () => {
                         Logout <IoMdLogOut /></button>
                     </div>}
                 </div>
-
-        
-
-
-
-
-            {/* {!gpt && <select className='md:mx-4 mx-0  px-4  rounded-md text-white bg-gray-500 py-2' onChange={handleLangChange}>
-                    {
-                        LANG_CONFIG.map((lang) => <option value={lang.identifer} key="this">{lang.name}</option>
-                        )
-                    }
-                </select>} */}
-
-
-
-
-
-
         </div>
     )
 }

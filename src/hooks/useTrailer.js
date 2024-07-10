@@ -6,7 +6,7 @@ import { OPTIONS } from "../utils/constant";
 const useTrailer = (id) => {
 
     const dispatch = useDispatch();
-
+ 
     const trailerData = useSelector((store) => store.movie.trailerVideo)
   
 

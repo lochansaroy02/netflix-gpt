@@ -6,7 +6,6 @@ const VideoBackground = () => {
 
     const trailerData = useSelector((store) => store.movie.trailerVideo)
     const Id = movieData?.results[0]?.id;
-    console.log(movieData)
     useTrailer(Id)
     return (
         trailerData &&
@@ -15,7 +14,7 @@ const VideoBackground = () => {
 
 
             <div className="">
-                {<div className="w-screen  my-0  bg-black   ">
+                {<div className="w-screen  my-0  bg-black">
                     <iframe
                         class=" aspect-video w-screen "
                         src={`https://www.youtube.com/embed/${trailerData?.key}?autoplay=1&mute=1&loop=1`}

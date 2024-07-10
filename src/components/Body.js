@@ -10,10 +10,15 @@ import TopRatedMovies from './movies/TopRatedMovies';
 import NowPlayingMovies from './movies/NowPlayingMovies';
 import PopulerMovies from './movies/PopulerMovies';
 import Movies from './movies/Movies';
+import CardShimmer from './Shimmer/CardShimmer';
+import { useSelector } from 'react-redux';
+import useAllData from '../hooks/useAllData';
+import useMovieGenre from '../hooks/movies/useMovieGenre';
+import useTvGenre from '../hooks/tvSeries/useTvGenre';
+import useGenre from '../hooks/useGenre';
 
 
 const Body = () => {
-
 
     // const AppRouter = createBrowserRouter([
 
@@ -37,18 +42,16 @@ const Body = () => {
     // ])
 
 
+    
 
-
-
-
+    
 
     return (
             <div className='text-white'>
-
-           <Movies/> 
+                
             </div>
         // <RouterProvider router={AppRouter} />
     )
 }
 
-export default Body
+export default Body;

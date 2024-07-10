@@ -18,7 +18,7 @@ const Login = () => {
     const name = useRef(null)
 
     const handleLogin = () => {
-        setLogin(!Login)
+        setLogin(!Login);
 
     }
 
@@ -67,7 +67,6 @@ const Login = () => {
                 .then((userCredential) => {
                     // Signed in 
                     const user = userCredential.user;
-
                     // ...
                 })
                 .catch((error) => {
