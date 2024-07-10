@@ -2,19 +2,20 @@ import { useDispatch, useSelector } from 'react-redux';
 import { IMG_CDN } from '../utils/constant';
 import useBackdrop from '../hooks/useBackdrop';
 import useMovies from '../hooks/movies/usePopulerMovies';
-import { addThisMovie } from '../utils/movieSlice';
+import { addThisMovie, addToWatchlist } from '../utils/movieSlice';
 import useGenre from '../hooks/useGenre';
 import usePopulerShows from '../hooks/tvSeries/usePopulerShows';
 import PopulerMovies from './movies/PopulerMovies';
 import { useEffect, useMemo } from 'react';
 
 const MoviePage = () => {
+    const watchlist = useSelector((store)=> store.movie.watchlist);
     const thisMovie = useSelector((store) => store.movie.clickedMovieData);
     const genreData = useSelector((store) => store.movie.allgenre);
     const backdrop = useSelector((store) => store.movie.backdrop);
 
-    
-
+    const dispatch = useDispatch();
+    console.log(watchlist)
     useGenre();
     usePopulerShows();
 
@@ -41,13 +42,22 @@ const MoviePage = () => {
         return Array.from(uniqueGenresMap.values());
     };
 
+
+
+
     const thisGenre = useMemo(() => removeDuplicatesAndStoreAsObject(nestedArray), [nestedArray]);
 
     if (!thisMovie) {
-        return <div>Loading...</div>; // Add a loading state
+        return <div>Loading...</div>;
     }
 
     const { id, poster_path, vote_average, title, name, overview, release_date, backdrop_path } = thisMovie;
+
+    const handleWatchlist = ()=>{
+        dispatch(addToWatchlist(thisMovie))
+        console.log("added ")
+    }
+
 
     return (
         <div className='flex  '>
@@ -77,7 +87,7 @@ const MoviePage = () => {
                         <button className='mx-4 py-4 px-10 rounded-xl text-xl font-semibold bg-neutral-100 text-neutral-950'>
                             Play Now
                         </button>
-                        <button className='mx-4 py-4 px-10 rounded-xl text-xl font-semibold border'>
+                        <button onClick={handleWatchlist} className='mx-4 py-4 px-10 rounded-xl text-xl font-semibold border'>
                             + Add to watchlist
                         </button>
                     </div>

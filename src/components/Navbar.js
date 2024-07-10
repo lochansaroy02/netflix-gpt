@@ -71,6 +71,10 @@ const Navbar = () => {
         navigate("/")    
     }
 
+    const handleWatchlist = ()=> {
+        navigate("/watchlist")
+    }
+
     return (
         <div className='flex bg-black   w-screen z-40  fixed justify-between items-center md:h-fit '>
             <div onClick={handleClick} className=' cursor-pointer flex justify-center'>
@@ -89,7 +93,10 @@ const Navbar = () => {
                         <button onClick={handleSignout} className='w-fit  ml-0  flex  items-center gap-2  z-10 mx-0 md:px-4  md:ml-4 bg-gray-700 py-1 px-2 md:text-xl  text-md rounded-lg text-white '> 
                         Logout <IoMdLogOut /></button>
                     </div>}
-                </div>
+                        <div onClick={handleWatchlist} className='text-white text-xl cursor-pointer bg-neutral-600  rounded-lg p-4'>
+                            <h1>Watchlist </h1>
+                        </div>
+                    </div>
         </div>
     )
 }

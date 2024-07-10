@@ -9,6 +9,8 @@ const movieSlice = createSlice({
         populer: null,
         genre: null,
         allgenre: null,
+        watchlist : [],
+
         
         trailerVideo: null,
         movieId: null,
@@ -33,6 +35,12 @@ const movieSlice = createSlice({
         addAllGenre: (state, action) => {
             state.allgenre = action.payload;
         },
+        addToWatchlist: (state, action) => {
+            state.watchlist.push(action.payload);
+        },
+        removeWatchlist: (state, action) => {
+            state.watchlist.pop();
+        },
 
         
         addTrailer: (state, action) => {
@@ -54,5 +62,5 @@ const movieSlice = createSlice({
     }
 })
 
-export const { addMovies, addTrailer, addGenre, addPopulerMovies,addNowPlayingMovies,addSelectedMovie, addTopRatedMovies,addBackdrop,addTopRated,addThisMovie,addAllGenre } = movieSlice.actions;
+export const { addMovies, addTrailer, addGenre, addPopulerMovies,addNowPlayingMovies,addSelectedMovie, addTopRatedMovies,addBackdrop,addTopRated,addThisMovie,addAllGenre ,addToWatchlist,removeWatchlist} = movieSlice.actions;
 export default movieSlice.reducer;

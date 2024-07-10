@@ -19,6 +19,7 @@ import usePopulerMovies from '../hooks/movies/usePopulerMovies';
 import MovieCard from './MovieCard';
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Watchlist from './Watchlist';
 
 
 const Body = () => {
@@ -27,11 +28,13 @@ const Body = () => {
       <>
       
       <Header />
-    
+ 
         <Routes>
           <Route path="/" element={<Browse />} />
           <Route path="/:id" element={<MoviePage />} />
-        </Routes>
+          <Route path="/watchlist" element={<Watchlist/>} />
+        </Routes> 
+     
       </>
     )
 }
