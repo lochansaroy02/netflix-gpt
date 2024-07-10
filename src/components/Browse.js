@@ -28,7 +28,6 @@ const Browse = () => {
 
 
 
-      <Header />
       {
         gptState ? <GptPage /> : <>
           <Main/> 

@@ -65,12 +65,16 @@ const Navbar = () => {
     //     dispatch(changeLanguage(e.target.value))
     // }
 
+ 
 
+    const handleClick  = ()=>{
+        navigate("/")    
+    }
 
     return (
-        <div className='flex bg-black  justify-between items-center md:h-fit '>
-            <div className=' flex justify-center'>
-                <img className='w-40 h-20' src={LOGO} alt="Logo" />
+        <div className='flex bg-black   w-screen z-40  fixed justify-between items-center md:h-fit '>
+            <div onClick={handleClick} className=' cursor-pointer flex justify-center'>
+                <img  className='w-40 h-20' src={LOGO} alt="Logo" />
 
             </div>
 

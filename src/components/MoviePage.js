@@ -6,21 +6,19 @@ import { addThisMovie } from '../utils/movieSlice';
 import useGenre from '../hooks/useGenre';
 import usePopulerShows from '../hooks/tvSeries/usePopulerShows';
 import PopulerMovies from './movies/PopulerMovies';
+import { useEffect, useMemo } from 'react';
 
 const MoviePage = () => {
     const thisMovie = useSelector((store) => store.movie.clickedMovieData);
     const genreData = useSelector((store) => store.movie.allgenre);
     const backdrop = useSelector((store) => store.movie.backdrop);
 
+    
+
     useGenre();
     usePopulerShows();
 
-    if (!thisMovie) {
-        return <div>Loading...</div>; // Add a loading state
-    }
-
-    const { id, poster_path, vote_average, title, name, overview, release_date, backdrop_path } = thisMovie;
-    const genreId = thisMovie.genre_ids || [];
+    const genreId = thisMovie?.genre_ids || [];
 
     const handleGenre = (genreData, genreId) => {
         let genreArr = [];
@@ -30,7 +28,7 @@ const MoviePage = () => {
         return genreArr;
     };
 
-    const nestedArray = handleGenre(genreData, genreId);
+    const nestedArray = useMemo(() => handleGenre(genreData, genreId), [genreData, genreId]);
 
     const removeDuplicatesAndStoreAsObject = (nestedArray) => {
         const flattenedArray = nestedArray.flat();
@@ -43,15 +41,21 @@ const MoviePage = () => {
         return Array.from(uniqueGenresMap.values());
     };
 
-    const thisGenre = removeDuplicatesAndStoreAsObject(nestedArray);
+    const thisGenre = useMemo(() => removeDuplicatesAndStoreAsObject(nestedArray), [nestedArray]);
+
+    if (!thisMovie) {
+        return <div>Loading...</div>; // Add a loading state
+    }
+
+    const { id, poster_path, vote_average, title, name, overview, release_date, backdrop_path } = thisMovie;
 
     return (
-        <div className='flex '>
-            <div className='flex md:h-full bg-red-300 flex-wrap'>
+        <div className='flex  '>
+            <div className='flex md:h-full bg-red-300  mt-20 flex-wrap'>
                 <img className='md:w-screen md:fixed fixed h-screen object-cover blur-sm' src={IMG_CDN + backdrop_path} alt="" />
                 <div className="fixed inset-0 bg-black opacity-70 md:opacity-60"></div>
             </div>
-            <div className='md:pt-28 pt-28 justify-center md:p-5 w-screen h-screen md:bg-gradient-to-t md:from-black flex left-0 absolute'>
+            <div className='md:pt-28 pt-28 mt-10 justify-center md:p-5 w-screen h-screen md:bg-gradient-to-t md:from-black flex left-0 absolute'>
                 <div className='rounded-lg h-fit drop-shadow-xl mx-32'>
                     <img className='rounded-xl' src={IMG_CDN + poster_path} alt="" />
                 </div>

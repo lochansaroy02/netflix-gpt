@@ -8,7 +8,9 @@ function App() {
   
 
       <Provider store={appStore}>
+          <Router>
         <Body />
+          </Router>
       </Provider>
   
 

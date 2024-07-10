@@ -14,7 +14,7 @@ const Main = () => {
     const { original_title, overview, poster_path } = movieData.results[0];
 
     return (
-        <div className=' flex w-screen bg-gradient-to-t  from-black  py-10 md:top-0  top-52   rounded-b-xl   md:py-30 md:w-fit md:h-fit  px-10 text-white   md:opacity-80 md:bg-gradient-to-r'>
+        <div className=' flex w-screen bg-gradient-to-t   mt-20  from-black  py-10 md:top-0  top-52   rounded-b-xl   md:py-30 md:w-fit md:h-fit  px-10 text-white   md:opacity-80 md:bg-gradient-to-r'>
         <div className='ml-40' >
         <h1 className='font-bold text-4xl md:m-4'>{original_title}</h1>
             <p className='md:m-4 mb-6 md:w-3/4'>{overview}</p>

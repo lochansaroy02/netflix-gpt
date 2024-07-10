@@ -24,12 +24,15 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 const Body = () => {
     const thisMovie = useSelector((store)=> store.movie.clickedMovieData)
     return (
-        <Router>
+      <>
+      
+      <Header />
+    
         <Routes>
           <Route path="/" element={<Browse />} />
           <Route path="/:id" element={<MoviePage />} />
         </Routes>
-      </Router>
+      </>
     )
 }
 
