@@ -20,17 +20,21 @@ import MovieCard from './MovieCard';
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Watchlist from './Watchlist';
+import useTrailer from '../hooks/useTrailer';
+import VideoBackground from './VideoBackground';
 
 
 const Body = () => {
     const thisMovie = useSelector((store)=> store.movie.clickedMovieData)
+    useTrailer()
+    
     return (
       <>
       
       <Header />
- 
         <Routes>
           <Route path="/" element={<Browse />} />
+          <Route path="/:id/trailer" element={<VideoBackground />} />
           <Route path="/:id" element={<MoviePage />} />
           <Route path="/watchlist" element={<Watchlist/>} />
         </Routes> 

@@ -13,7 +13,7 @@ import { MdHome } from "react-icons/md";
 const Navbar = () => {
     const user = useSelector((store) => store.user)
     const gpt = useSelector((store) => store.gpt.gptState)
-
+    const watchlist = useSelector((store) => store.movie.watchlist);
     const navigate = useNavigate()
     const dispatch = useDispatch();
 
@@ -94,7 +94,7 @@ const Navbar = () => {
                         Logout <IoMdLogOut /></button>
                     </div>}
                         <div onClick={handleWatchlist} className='text-white text-xl cursor-pointer bg-neutral-600  rounded-lg p-4'>
-                            <h1>Watchlist </h1>
+                            <h1>Watchlist ({watchlist.length}) </h1>
                         </div>
                     </div>
         </div>

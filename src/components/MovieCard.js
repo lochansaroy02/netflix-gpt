@@ -4,6 +4,7 @@ import { Navigate, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { addSelectedMovie, addThisMovie } from '../utils/movieSlice'
 import CardShimmer from './Shimmer/CardShimmer'
+import useTrailer from '../hooks/useTrailer'
 
 
 const MovieCard = ({thisMovie}) => {
@@ -18,6 +19,7 @@ const MovieCard = ({thisMovie}) => {
     useEffect(()=>{
         //   dispatch(addSelectedMovie(idArr))  
     },[])
+    useTrailer(thisMovie.id)
     const openImage = ()=>{
         navigate(`/${thisMovie.id}`);
             

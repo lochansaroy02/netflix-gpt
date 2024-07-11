@@ -2,20 +2,25 @@ import { useDispatch, useSelector } from 'react-redux';
 import { IMG_CDN } from '../utils/constant';
 import useBackdrop from '../hooks/useBackdrop';
 import useMovies from '../hooks/movies/usePopulerMovies';
-import { addThisMovie, addToWatchlist } from '../utils/movieSlice';
+import { addMovieId, addThisMovie, addToWatchlist } from '../utils/movieSlice';
 import useGenre from '../hooks/useGenre';
 import usePopulerShows from '../hooks/tvSeries/usePopulerShows';
 import PopulerMovies from './movies/PopulerMovies';
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+import useTrailer from '../hooks/useTrailer';
+import { useNavigate } from 'react-router-dom';
 
 const MoviePage = () => {
-    const watchlist = useSelector((store)=> store.movie.watchlist);
+    let [flag, setFlag] = useState(false);
+    const watchlist = useSelector((store) => store.movie.watchlist);
     const thisMovie = useSelector((store) => store.movie.clickedMovieData);
     const genreData = useSelector((store) => store.movie.allgenre);
     const backdrop = useSelector((store) => store.movie.backdrop);
+    const trailerID = useSelector((store)=> store.movie.movieId)
+    const navigate = useNavigate()
 
     const dispatch = useDispatch();
-    console.log(watchlist)
+    
     useGenre();
     usePopulerShows();
 
@@ -52,10 +57,17 @@ const MoviePage = () => {
     }
 
     const { id, poster_path, vote_average, title, name, overview, release_date, backdrop_path } = thisMovie;
+    dispatch(addMovieId(id))
 
-    const handleWatchlist = ()=>{
+
+    const handleWatchlist = () => {
+
         dispatch(addToWatchlist(thisMovie))
-        console.log("added ")
+        setFlag(true)
+    }
+
+    const handleTrailer = ()=>{
+        navigate(`/${thisMovie.id}/trailer`);
     }
 
 
@@ -80,15 +92,20 @@ const MoviePage = () => {
                     </div>
                     <p className='md:text-lg md:w-3/4 text-wrap md:px-1 w-fit mx-5 text-left text-sm md:text-md'>{overview}</p>
                     <div className='flex'>
+                            <h3 className='md:px-6  text-base mt-4'> {id}</h3>
                         <h3 className='md:px-6 mt-4'>🎬 {release_date}</h3>
                         <h3 className='md:text-xl md:px-6 mt-4'>⭐ {parseFloat(vote_average.toFixed(1))}</h3>
                     </div>
                     <div className='flex my-4'>
-                        <button className='mx-4 py-4 px-10 rounded-xl text-xl font-semibold bg-neutral-100 text-neutral-950'>
+                        <button  onClick={handleTrailer} className='mx-4 py-4 px-10 rounded-xl text-xl font-semibold bg-neutral-100 text-neutral-950'>
                             Play Now
                         </button>
                         <button onClick={handleWatchlist} className='mx-4 py-4 px-10 rounded-xl text-xl font-semibold border'>
-                            + Add to watchlist
+                            {flag ? (
+                                <h3>Added</h3>
+                            ) : (
+                                <h3>+ Add to watchlist</h3>
+                            )}
                         </button>
                     </div>
                 </div>
