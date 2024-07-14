@@ -76,7 +76,7 @@ const Navbar = () => {
     }
 
     return (
-        <div className='flex bg-black   w-screen z-40  fixed justify-between items-center md:h-fit '>
+        <div className='flex bg-black  w-full md:w-screen z-40  fixed justify-between items-center md:h-fit '>
             <div onClick={handleClick} className=' cursor-pointer flex justify-center'>
                 <img  className='w-40 h-20' src={LOGO} alt="Logo" />
 
@@ -93,7 +93,7 @@ const Navbar = () => {
                         <button onClick={handleSignout} className='w-fit  ml-0  flex  items-center gap-2  z-10 mx-0 md:px-4  md:ml-4 bg-gray-700 py-1 px-2 md:text-xl  text-md rounded-lg text-white '> 
                         Logout <IoMdLogOut /></button>
                     </div>}
-                        <div onClick={handleWatchlist} className='text-white text-xl cursor-pointer bg-neutral-600  rounded-lg p-4'>
+                        <div onClick={handleWatchlist} className='text-white text-sm md:text-xl cursor-pointer bg-neutral-600  rounded-lg md:p-4 px-4 py-1  '>
                             <h1>Watchlist ({watchlist.length}) </h1>
                         </div>
                     </div>

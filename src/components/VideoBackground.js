@@ -11,8 +11,8 @@ const VideoBackground = () => {
         trailerData &&
 
         (
-            <div className="">
-                {<div className="w-screen  my-0  bg-black">
+            <div className=""> 
+                {<div className=" md:w-screen  my-0   bg-black"> 
                     <iframe
                         class=" aspect-video w-screen "
                         src={`https://www.youtube.com/embed/${trailerData?.key}?autoplay=1&mute=0&loop=1`}

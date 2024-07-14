@@ -6,6 +6,7 @@ import useNowPlayingMovies from '../../hooks/movies/useNowPlayingMovies';
 const NowPlayingMovies = () => {
   useNowPlayingMovies()
   const movieData = useSelector((store) => store.movie.nowPlaying);
+  console.log(movieData)
 
   return (
     <div className='text-white '>

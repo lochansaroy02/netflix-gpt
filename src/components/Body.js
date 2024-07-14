@@ -38,7 +38,6 @@ const Body = () => {
           <Route path="/:id" element={<MoviePage />} />
           <Route path="/watchlist" element={<Watchlist/>} />
         </Routes> 
-     
       </>
     )
 }
