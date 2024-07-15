@@ -12,9 +12,9 @@ const VideoBackground = () => {
 
         (
             <div className=""> 
-                {<div className=" md:w-screen  my-0   bg-black"> 
+                {<div className=" md:w-screen  my-0  absolute top-20  bg-black"> 
                     <iframe
-                        class=" aspect-video w-screen "
+                        class=" aspect-video w-screen  "
                         src={`https://www.youtube.com/embed/${trailerData?.key}?autoplay=1&mute=0&loop=1`}
                         title="YouTube video player"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

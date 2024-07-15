@@ -22,19 +22,19 @@ const Watchlist = () => {
 
                     <div className='flex justify-center  w-10/12 mb-4 '>
                     <div className='flex bg-neutral-800 w-3/4 rounded-lg'>
-                        <div className='  rounded-lg '>
-                            <img className='  rounded-lg  ' src={IMG_CDN + item.poster_path} alt="" />
+                        <div className='  rounded-lg  '>
+                            <img className=' rounded-lg  ' src={IMG_CDN + item.poster_path} alt="" />
                         </div>
                         <div className=' p-4  '>
-                            <h1 className='text-2xl mb-4'>{item.title} </h1>
-                            <p className='  text-sm    '>{item.overview}</p>
+                            <h1 className=' text-xl md:text-2xl mb-4'>{item.title} </h1>
+                            <p className='md:flex   hidden text-sm    '>{item.overview}</p>
                            
 
-                            <div className='mt-4' >
-                                <button className='mr-4 py-2 px-6 rounded-xl text-base font-semibold bg-neutral-100 text-neutral-950'>
-                                    Play Now
+                            <div className='mt-4 flex ' >
+                                <button className='mr-4 py-1 px-2 md:py-2 md:px-6 rounded-xl text-sm md:text-base font-semibold bg-neutral-100 text-neutral-950'>
+                                    Play 
                                 </button>
-                                <button onClick={handleWatchlist} className='m text-red-100 bg-red-800 py-2 px-6 rounded-xl text-base font-semibold border border-red-100'>
+                                <button onClick={handleWatchlist} className='py-1 px-2  text-red-100 bg-red-800 md:py-2 md:px-6 rounded-xl text-sm md:text-base font-semibold border border-red-100'>
                                     Remove 
                                 </button>
                             </div>
