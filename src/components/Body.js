@@ -22,6 +22,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Watchlist from './Watchlist';
 import useTrailer from '../hooks/useTrailer';
 import VideoBackground from './VideoBackground';
+import Logo from './images/Logo';
 
 
 const Body = () => {

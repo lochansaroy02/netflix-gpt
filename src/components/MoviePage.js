@@ -84,9 +84,9 @@ const MoviePage = () => {
                 <div className='text-white md:pl-10 md:mb-0 w-full flex flex-col md:items-start items-center'>
                     <h1 className='md:text-6xl text-3xl my-2 px-5 md:mb-8 md:px-6'>{title}</h1>
                     <div className='mb-6'>
-                        <ul className='flex '>
+                        <ul className='flex flex-wrap   '>
                             {thisGenre?.map((item, index) =>
-                                (<li key={index} className='md:px-4  px-2 py-1 md:py-2 text-red-100 rounded-full  text-sm md:text-base mx-2 bg-red-600'>{item.name}</li>)
+                                (<li key={index} className='md:px-4 my-2   px-2 py-1 md:py-2 text-red-100 rounded-full  text-sm md:text-base mx-2 bg-red-600'>{item.name}</li>)
                             )}
                         </ul>
                     </div>

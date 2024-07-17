@@ -5,10 +5,10 @@ import { IoMdSearch } from "react-icons/io";
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { addUser, removeUser } from '../utils/userSlice';
-import { LOGO } from '../utils/constant';
 import { toggleGPTState } from '../utils/gptSlice';
 import { IoMdLogOut } from "react-icons/io";
 import { MdHome } from "react-icons/md";
+import logo from './images/logo.png'
 
 const Navbar = () => {
     const user = useSelector((store) => store.user)
@@ -78,7 +78,7 @@ const Navbar = () => {
     return (
         <div className='flex bg-black  w-full md:w-screen z-40  fixed justify-between items-center md:h-fit '>
             <div onClick={handleClick} className=' cursor-pointer flex justify-center'>
-                <img  className='w-40 h-20' src={LOGO} alt="Logo" />
+                <img  className='w-32' src={logo} alt="Logo" />
 
             </div>
 
