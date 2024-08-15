@@ -1,14 +1,22 @@
-import React, { useRef } from 'react'
-import { lang } from '../utils/langConst'
-import { useDispatch, useSelector } from 'react-redux'
-import { BACKGROUND_IMAGE, OPTIONS } from '.././utils/constant'
+import { GoogleGenerativeAI } from "@google/generative-ai";
+import React, { useRef } from 'react';
 import { MdSearch } from "react-icons/md";
-import openAiResponse from '../utils/openAi';
+import { useDispatch } from 'react-redux';
+import { OPTIONS } from '.././utils/constant';
 import { pushMovieName, pushMoviesList, } from '../utils/gptSlice';
-import Header from './Navbar';
+
+
 
 const GptSearch = () => {
+  const API = "AIzaSyBMRn1wDtDGaJY6zTQ-uptwEIsuros_b0k"
+  // fix process.env
+  const genAI = new GoogleGenerativeAI(process.env.REACT_APP_AI_API_KEY);
+  const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+
+
   const dispatch = useDispatch(null);
+
+
 
 
 
@@ -23,27 +31,23 @@ const GptSearch = () => {
   }
 
 
-  const handleGPTClick = async () => {
 
-    const gptQuary = "act as a movie recommendation system and suggest me some movie for the quary:" + searchText.current.value + ".only give  me 5 top results, comma saprated, here is the example: movie1,movie2,movie3,movie4...do not write here is the result and all dont add numbering and year "
-    const result = await openAiResponse(gptQuary)
-    const movieArray = result?.[0]?.message?.content?.split(",");
+
+  const handleAISearch = async () => {
+    const prompt = `act as a movie recommendation system and suggest me some movie for the quary: ${searchText.current.value}.only give  me 10 top results, comma separated, here is the example: movie1,movie2,movie3,movie4...do not write here is the result and all do not add numbering and year`;
+    const result = await model.generateContent(prompt);
+    const textResult = result.response.text()
+    const movieArray = textResult.split(",");
 
     if (movieArray.length > 1) {
       dispatch(pushMovieName(movieArray))
     }
-
     const promiseArray = movieArray?.map((movie) => getSearchedMovies(movie))
     const finalResult = await Promise?.all(promiseArray)
 
     dispatch(pushMoviesList(finalResult))
 
-
-
   }
-
-  const langKey = useSelector((store) => store.config.lang)
-
 
   return (
 
@@ -54,10 +58,8 @@ const GptSearch = () => {
         }}
       >
 
-        <input ref={searchText} className='m-2 p-4 h-10 text-white bg-zinc-700  rounded-md w-3/4 md:w-1/2' type="text" placeholder={lang[langKey].placeHolder} />
-        <button onClick={handleGPTClick} className='bg-red-600  flex items-center gap-2  py-2 px-4 rounded-lg'> <MdSearch /> {lang[langKey].search}</button>
-
-
+        <input ref={searchText} className='m-2 p-4 h-10 text-white bg-zinc-700  rounded-md w-3/4 md:w-1/2' type="text" />
+        <button onClick={handleAISearch} className='bg-red-600  flex items-center gap-2  py-2 px-4 rounded-lg'> <MdSearch /> { }</button>
       </form>
     </div>
   )

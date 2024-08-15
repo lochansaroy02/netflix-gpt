@@ -21,10 +21,10 @@ const GptResults = () => {
         <div className='flex  flex-col overflow-scroll  md:overflow-y-scroll items-center w-screen md:h-screen h-screen top-[30%]   md:p-10   fixed'>
 
             
-            <div className='flex items-center   rounded-xl   justify-center flex-wrap md:w-fit mt-5 h-fit'>
+            {/* <div className='flex items-center   rounded-xl   justify-center flex-wrap md:w-fit mt-5 h-fit'>
                 {movieName?.map((movie) =>
                     <h1 className='px-3  py-1 md:py-1 bg-neutral-700 text-white rounded-md text-sm  md:text-lg my-2 md:my-4 mx-2 '>{movie}</h1>)}
-            </div >
+            </div > */}
             {<div className='text-white justify-center  gap-10 flex flex-wrap md:px-36 py-10   w-screen h-full md:mt-5 '>
                 {posterArr?.map((item) => {
                     if (item) {

@@ -17,7 +17,7 @@ const Main = () => {
     //     navigate(`/${thisMovie.id}`);
     // }
     return (
-        <div className='  justify-center flex-col-reverse md:flex-row flex w-full bg-gradient-to-t   mt-20  from-black  py-10 md:top-0  top-52   rounded-b-xl    md:py-30 md:w-fit md:h-fit  px-10 text-white   md:opacity-80 md:bg-gradient-to-r'>
+      <div className='  justify-center flex-col-reverse md:flex-row flex w-full bg-gradient-to-t   mt-20  from-black  py-10 md:top-0  top-52   rounded-b-xl    md:py-30 md:w-fit md:h-fit  px-10 text-white   md:opacity-80 md:bg-gradient-to-r'>
         <div className='md:ml-40 flex flex-col items-center ' >
         <h1 className='font-bold text-2xl md:text-4xl md:m-4'>{original_title}</h1>
             <p className='md:flex  hidden md:m-4 mb-6 md:w-3/4'>{overview}</p>
