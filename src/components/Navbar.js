@@ -68,7 +68,7 @@ const Navbar = () => {
  
 
     const handleClick  = ()=>{
-        navigate("/")    
+        navigate('/')
     }
 
     const handleWatchlist = ()=> {

@@ -28,7 +28,6 @@ const GptSearch = () => {
     return json;
   }
 
-  console.log(process.env.REACT_APP_AI_API_KEY);
 
 
   const handleAISearch = async () => {
@@ -50,14 +49,16 @@ const GptSearch = () => {
   return (
 
     <div className=' h-fit  '>
-      <form className='flex flex-col justify-center items-center z-20  mt-20   fixed w-full top-20 '
+      <form className='flex  justify-center items-center z-20  mt-20   fixed w-full top-20 '
         onSubmit={(e) => {
           e.preventDefault()
         }}
       >
 
-        <input ref={searchText} className='m-2 p-4 h-10 text-white bg-zinc-700  rounded-md w-3/4 md:w-1/2' type="text" />
-        <button onClick={handleAISearch} className='bg-red-600  flex items-center gap-2  py-2 px-4 rounded-lg'> <MdSearch /> { }</button>
+        <input placeholder="Enter your movie taste" ref={searchText} className='m-2 p-4 h-10 text-white bg-zinc-700  rounded-md w-3/4 md:w-1/2' type="text" />
+        <button onClick={handleAISearch} className='bg-red-600 text-lg flex items-center gap-2  px-4 py-2 rounded-lg'>
+          <h1 className="h-full">search </h1>
+          <span className="text-xl "> <MdSearch /></span></button>
       </form>
     </div>
   )
