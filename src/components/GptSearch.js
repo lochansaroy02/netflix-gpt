@@ -8,8 +8,6 @@ import { pushMovieName, pushMoviesList, } from '../utils/gptSlice';
 
 
 const GptSearch = () => {
-  const API = "AIzaSyBMRn1wDtDGaJY6zTQ-uptwEIsuros_b0k"
-  // fix process.env
   const genAI = new GoogleGenerativeAI(process.env.REACT_APP_AI_API_KEY);
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
@@ -30,7 +28,7 @@ const GptSearch = () => {
     return json;
   }
 
-
+  console.log(process.env.REACT_APP_AI_API_KEY);
 
 
   const handleAISearch = async () => {
